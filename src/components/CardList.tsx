@@ -1,11 +1,14 @@
 import * as React from 'react';
+import { IRobot } from '../containers/App.js';
 import Card from './Card';
 
-const CardList = ({ robots }) => {
+// type props = { robots: IRobot[]}; /*one way of doing it (just put props in instead of the object*/
+/*JSX.Element does not have to be there*/
+const CardList = ({ robots }:{robots: IRobot[]} ): JSX.Element => {
   return (
     <div>
       {
-        robots.map((user, i) => {
+        robots.map((user: IRobot, i: number) => {
           return (
             <Card
               key={i}
